@@ -25,10 +25,10 @@ export function Header() {
     <header className="bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg border-b border-neutral-200/50 dark:border-neutral-700/50 sticky top-0 z-50 transition-all duration-300 shadow-sm">
       <nav className="container-custom">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo and Brand */}
           <div className="flex items-center space-x-3">
             <Logo size="sm" />
-            <Link href="/" className="text-xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 flex items-center">
+            <Link href="/" className="text-xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
               Josh <span className="gradient-text">M</span>
             </Link>
           </div>

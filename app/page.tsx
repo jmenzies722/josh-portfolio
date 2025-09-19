@@ -110,7 +110,7 @@ export default function HomePage() {
                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
                   {/* Default Image */}
                     <Image
-                    src="/profile-hero.png"
+                    src="/profile.jpg"
                     alt="Josh M"
                     width={600}
                     height={600}
@@ -124,7 +124,7 @@ export default function HomePage() {
                   
                   {/* Hover Image */}
                   <Image
-                    src="/profile.jpg"
+                    src="/IMG_2884.webp"
                     alt="Josh M"
                     width={600}
                     height={600}
