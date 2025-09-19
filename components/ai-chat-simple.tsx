@@ -545,19 +545,19 @@ projects, and professional achievements.`
         {/* Contact Prompt */}
         {showContactPrompt && (
           <div className="mb-4 p-4 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl border border-primary-200 dark:border-primary-700">
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-semibold text-primary-900 dark:text-primary-100">Interested in connecting?</h4>
-                <p className="text-sm text-primary-700 dark:text-primary-300">Josh would love to discuss opportunities with you!</p>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="text-center sm:text-left">
+                <h4 className="font-semibold text-primary-900 dark:text-primary-100 text-sm sm:text-base">Interested in connecting?</h4>
+                <p className="text-xs sm:text-sm text-primary-700 dark:text-primary-300">Josh would love to discuss opportunities with you!</p>
               </div>
-              <div className="flex gap-2">
-                <Button size="sm" variant="outline" asChild>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
                   <a href="https://www.linkedin.com/in/josh-m123456/" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="h-3 w-3 mr-1" />
                     LinkedIn
                   </a>
                 </Button>
-                <Button size="sm" asChild>
+                <Button size="sm" asChild className="w-full sm:w-auto">
                   <a href="/contact">
                     Contact
                   </a>
@@ -588,9 +588,9 @@ projects, and professional achievements.`
             <Button
               onClick={() => setInput("Tell me about Josh's platform engineering experience")}
               variant="outline"
-              className="px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-sm sm:text-base"
+              className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-sm sm:text-base font-medium"
             >
-              <Bot className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              <Bot className="h-4 w-4 mr-2" />
               Ask Shua About Josh
             </Button>
           </div>
