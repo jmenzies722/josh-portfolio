@@ -25,109 +25,123 @@ export default function HomePage() {
         
         <div className="container-custom relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            
-            {/* Left Column - Content */}
+              
+              {/* Left Column - Content */}
             <div className="text-center lg:text-left space-y-6 lg:space-y-8">
-              {/* Greeting */}
-              <div className="animate-fade-in-up">
+                {/* Greeting */}
+                <div className="animate-fade-in-up">
                 <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-3 tracking-wide uppercase">
-                  Hello, I'm
-                </p>
+                    Hello, I'm
+                  </p>
               </div>
-              
-              {/* Name */}
-              <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                
+                {/* Name */}
+                <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-100 leading-tight">
-                  Josh{' '}
-                  <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient">
+                    Josh{' '}
+                    <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient">
                     M
-                  </span>
-                </h1>
-              </div>
-              
-              {/* Typing Animation */}
-              <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                    </span>
+                  </h1>
+            </div>
+                
+                {/* Typing Animation */}
+                <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 <div className="text-lg sm:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-400 mb-6">
-                  <span className="text-neutral-500 dark:text-neutral-500 mr-2">I'm a</span>
-                  <TypingAnimation 
-                    texts={[
-                      'DevOps Engineer',
-                      'Platform Engineering Specialist', 
-                      'AWS Cloud Architect',
-                      'Kubernetes Expert',
-                      'Infrastructure Automation Lead',
-                      'Observability Expert',
-                      'CI/CD Specialist'
-                    ]}
-                    speed={100}
-                    deleteSpeed={50}
-                    pauseTime={2000}
-                    className="font-semibold text-blue-600 dark:text-blue-400"
-                  />
+                    <span className="text-neutral-500 dark:text-neutral-500 mr-2">I'm a</span>
+                    <TypingAnimation 
+                      texts={[
+                        'DevOps Engineer',
+                        'Platform Engineering Specialist', 
+                        'AWS Cloud Architect',
+                        'Kubernetes Expert',
+                        'Infrastructure Automation Lead',
+                        'Observability Expert',
+                        'CI/CD Specialist'
+                      ]}
+                      speed={100}
+                      deleteSpeed={50}
+                      pauseTime={2000}
+                      className="font-semibold text-blue-600 dark:text-blue-400"
+                    />
+                  </div>
                 </div>
-              </div>
-                   
-              {/* Description */}
-              <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                     
+                {/* Description */}
+                <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
                 <p className="text-base sm:text-lg lg:text-xl text-neutral-500 dark:text-neutral-500 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Transforming organizations through scalable infrastructure solutions, 
-                  delivering measurable business impact with modern DevOps practices.
-                </p>
-              </div>
-              
-              {/* CTA Buttons */}
-              <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                    Transforming organizations through scalable infrastructure solutions, 
+                    delivering measurable business impact with modern DevOps practices.
+                     </p>
+                   </div>
+                
+                {/* CTA Buttons */}
+                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                   <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
-                    <Link href="/chat">
+                <Link href="/chat">
                       <Bot className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
-                      Ask Shua
+                  Ask Shua
                       <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
-                    </Link>
-                  </Button>
+                </Link>
+              </Button>
                   <Button variant="outline" size="lg" asChild className="group border-2 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
-                    <a href="/menzies-resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/menzies-resume.pdf" target="_blank" rel="noopener noreferrer">
                       <Download className="mr-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce" />
-                      Download Resume
-                    </a>
-                  </Button>
-                </div>
+                  Download Resume
+                </a>
+              </Button>
+                  </div>
                 
                 {/* Mobile Chat Preview */}
                 <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                   <MobileChatPreview />
                 </div>
+                </div>
               </div>
-            </div>
-            
-            {/* Right Column - Profile Image */}
+              
+              {/* Right Column - Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in-up mt-8 lg:mt-0" style={{animationDelay: '0.5s'}}>
-              <div className="relative group">
+                <div className="relative group">
                 {/* Subtle Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-2xl opacity-15 group-hover:opacity-25 transition-opacity duration-500"></div>
-                
-                {/* Profile Image */}
+                  
+                  {/* Profile Image */}
                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
-                  <Image
+                  {/* Default Image */}
+                    <Image
                     src="/profile-hero.png"
                     alt="Josh M"
                     width={600}
                     height={600}
-                    className="w-full h-full rounded-full border-4 border-white/40 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image"
-                    priority
+                    className="w-full h-full rounded-full border-4 border-white/40 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image group-hover:opacity-0"
+                      priority
                     quality={95}
                     sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 600px"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                   />
                   
+                  {/* Hover Image */}
+                  <Image
+                    src="/profile.jpg"
+                    alt="Josh M"
+                    width={600}
+                    height={600}
+                    className="absolute inset-0 w-full h-full rounded-full border-4 border-white/40 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image opacity-0 group-hover:opacity-100"
+                    quality={95}
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 600px"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    />
+                    
                   {/* Floating Tech Icons - Only on desktop */}
                   <div className="hidden lg:flex absolute -top-6 -right-6 w-16 h-16 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float">
                     <Cloud className="h-8 w-8 text-primary-600" />
-                  </div>
+                    </div>
                   <div className="hidden lg:flex absolute -bottom-6 -left-6 w-16 h-16 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '1s'}}>
                     <Code className="h-8 w-8 text-accent-600" />
-                  </div>
+                    </div>
                   <div className="hidden lg:flex absolute top-1/2 -left-8 w-14 h-14 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '2s'}}>
                     <Brain className="h-7 w-7 text-primary-500" />
                   </div>
@@ -147,11 +161,11 @@ export default function HomePage() {
                 <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 sm:mb-4 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                Meet <span className="gradient-text">Shua</span>
-              </h2>
+                       Meet <span className="gradient-text">Shua</span>
+                     </h2>
               <p className="text-sm sm:text-lg text-neutral-600 dark:text-neutral-400 mb-6 sm:mb-8 animate-fade-in-up px-4 sm:px-0" style={{animationDelay: '0.4s'}}>
-                My AI assistant that knows everything about my platform engineering experience and some of my life!
-              </p>
+                       My AI assistant that knows everything about my platform engineering experience and some of my life!
+                     </p>
             </div>
             <div className="animate-fade-in-up px-4 sm:px-0" style={{animationDelay: '0.6s'}}>
               <AIChat />
