@@ -28,7 +28,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <Logo size="sm" />
-            <Link href="/" className="text-xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
+            <Link href="/" className="text-xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 flex items-center">
               Josh <span className="gradient-text">M</span>
             </Link>
           </div>
