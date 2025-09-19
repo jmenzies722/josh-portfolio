@@ -305,11 +305,11 @@ export function AIChat() {
   }
 
   return (
-    <Card className="max-w-4xl mx-auto bg-white/80 dark:bg-neutral-800/80 backdrop-blur-lg border-2 border-primary-200/50 dark:border-primary-700/50 shadow-xl transition-all duration-300">
-      <CardHeader className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 dark:from-primary-600/20 dark:to-accent-600/20 rounded-t-xl p-6">
+    <Card className="max-w-4xl mx-auto bg-white/80 dark:bg-neutral-800/80 backdrop-blur-lg border-2 border-primary-200/50 dark:border-primary-700/50 shadow-xl transition-all duration-300 mx-4 sm:mx-auto">
+      <CardHeader className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 dark:from-primary-600/20 dark:to-accent-600/20 rounded-t-xl p-4 sm:p-6">
         <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center gap-3 text-xl">
-            <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
+          <div className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
               <Image
                 src="/profile-screenshot.png"
                 alt="Josh M"
@@ -318,21 +318,21 @@ export function AIChat() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="gradient-text font-bold">Shua - Josh's AI Assistant</span>
+            <span className="gradient-text font-bold text-sm sm:text-base lg:text-lg">Shua - Josh's AI Assistant</span>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-1 sm:gap-2">
             <Button
               onClick={toggleChat}
               variant="ghost"
               size="sm"
-              className={`transition-colors duration-200 ${
+              className={`transition-colors duration-200 p-2 sm:p-2 ${
                 isChatStopped 
                   ? 'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 hover:bg-green-50 dark:hover:bg-green-900/20' 
                   : 'text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 hover:bg-orange-50 dark:hover:bg-orange-900/20'
               }`}
               title={isChatStopped ? "Resume chat" : "Stop chat"}
             >
-              {isChatStopped ? <Play className="h-4 w-4" /> : <Square className="h-4 w-4" />}
+              {isChatStopped ? <Play className="h-3 w-3 sm:h-4 sm:w-4" /> : <Square className="h-3 w-3 sm:h-4 sm:w-4" />}
             </Button>
             <Button
               onClick={() => {
@@ -369,32 +369,32 @@ projects, and professional achievements.`
               }}
               variant="ghost"
               size="sm"
-              className="text-neutral-500 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200"
+              className="text-neutral-500 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200 p-2 sm:p-2"
               title="Download conversation with Josh's info"
             >
-              <Download className="h-4 w-4" />
+              <Download className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
             <Button
               onClick={clearChat}
               variant="ghost"
               size="sm"
-              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200"
+              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200 p-2 sm:p-2"
               title="Clear chat"
             >
-              <Trash2 className="h-4 w-4" />
+              <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6">
-        <div ref={messagesContainerRef} className="space-y-4 mb-6 max-h-96 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin">
+      <CardContent className="p-4 sm:p-6">
+        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 max-h-80 sm:max-h-96 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin">
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`flex gap-3 ${message.isUser ? 'justify-end' : 'justify-start'}`}
+              className={`flex gap-2 sm:gap-3 ${message.isUser ? 'justify-end' : 'justify-start'}`}
             >
               {!message.isUser && (
-                <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
                   <Image
                     src="/profile-screenshot.png"
                     alt="Josh M"
@@ -405,40 +405,40 @@ projects, and professional achievements.`
                 </div>
               )}
               <div
-                className={`max-w-md px-4 py-3 rounded-xl shadow-sm ${
+                className={`max-w-xs sm:max-w-md px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm ${
                   message.isUser
                     ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto'
                     : 'bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 text-neutral-900 dark:text-neutral-100'
                 }`}
               >
-                <p className="text-sm leading-relaxed">{message.text}</p>
-                <div className="flex items-center justify-between mt-2">
+                <p className="text-xs sm:text-sm leading-relaxed">{message.text}</p>
+                <div className="flex items-center justify-between mt-1 sm:mt-2">
                   <div className="flex items-center gap-1 text-xs opacity-70">
-                    <Clock className="h-3 w-3" />
-                    <span>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                    <Clock className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <span className="text-xs">{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                   </div>
                   {!message.isUser && (
                     <div className="flex items-center gap-1">
                       <button className="p-1 hover:bg-white/20 rounded transition-colors">
-                        <ThumbsUp className="h-3 w-3" />
+                        <ThumbsUp className="h-2 w-2 sm:h-3 sm:w-3" />
                       </button>
                       <button className="p-1 hover:bg-white/20 rounded transition-colors">
-                        <ThumbsDown className="h-3 w-3" />
+                        <ThumbsDown className="h-2 w-2 sm:h-3 sm:w-3" />
                       </button>
                     </div>
                   )}
                 </div>
               </div>
               {message.isUser && (
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-md">
-                  <User className="h-5 w-5 text-white" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-md flex-shrink-0">
+                  <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
               )}
             </div>
           ))}
           {isLoading && (
-            <div className="flex gap-3 justify-start">
-              <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
+            <div className="flex gap-2 sm:gap-3 justify-start">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
@@ -447,18 +447,18 @@ projects, and professional achievements.`
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-4 py-3 rounded-xl shadow-sm">
+              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                  <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-500 rounded-full animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
               </div>
             </div>
           )}
           {isTyping && (
-            <div className="flex gap-3 justify-start">
-              <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
+            <div className="flex gap-2 sm:gap-3 justify-start">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
@@ -467,8 +467,8 @@ projects, and professional achievements.`
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-4 py-3 rounded-xl shadow-sm max-w-md">
-                <p className="text-sm leading-relaxed text-neutral-900 dark:text-neutral-100">
+              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm max-w-xs sm:max-w-md">
+                <p className="text-xs sm:text-sm leading-relaxed text-neutral-900 dark:text-neutral-100">
                   {typingText}
                   <span className="animate-blink text-primary-600 dark:text-primary-400 font-bold">|</span>
                 </p>
@@ -502,8 +502,8 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div className="space-y-4">
-          <div className="flex flex-wrap gap-2 justify-center">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center">
             {['Technical Expertise', 'Career Impact', 'Platform Engineering', 'Professional Journey'].map((suggestion) => (
               <button
                 key={suggestion}
@@ -511,7 +511,7 @@ projects, and professional achievements.`
                   setInput(suggestion)
                   if (messages.length > 3) setShowContactPrompt(true)
                 }}
-                className="px-3 py-1.5 text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-200"
+                className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-200"
               >
                 {suggestion}
               </button>
@@ -523,14 +523,14 @@ projects, and professional achievements.`
             <Button
               onClick={() => setInput("Tell me about Josh's platform engineering experience")}
               variant="outline"
-              className="px-6 py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200"
+              className="px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-sm sm:text-base"
             >
-              <Bot className="h-4 w-4 mr-2" />
+              <Bot className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               Ask Shua About Josh
             </Button>
           </div>
           
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
               <input
                 type="text"
                 value={input}
@@ -543,7 +543,7 @@ projects, and professional achievements.`
                       ? "Shua is typing..." 
                       : "Ask Shua about Josh's expertise, projects, or anything else..."
                 }
-                className={`flex-1 px-4 py-3 border rounded-lg backdrop-blur-sm text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
+                className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 border rounded-lg backdrop-blur-sm text-sm sm:text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
                   isChatStopped 
                     ? 'border-orange-200 dark:border-orange-700 bg-orange-50/80 dark:bg-orange-900/20 focus:ring-orange-500 focus:border-orange-500' 
                     : 'border-primary-200 dark:border-primary-700 bg-white/80 dark:bg-neutral-700/80 focus:ring-primary-500 focus:border-primary-500'
@@ -553,13 +553,13 @@ projects, and professional achievements.`
             <Button 
               onClick={handleSend} 
               disabled={isLoading || isTyping || !input.trim() || isChatStopped}
-              className={`px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
                 isChatStopped 
                   ? 'bg-orange-500 hover:bg-orange-600 text-white' 
                   : 'bg-gradient-to-br from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white'
               }`}
             >
-              <Send className="h-5 w-5" />
+              <Send className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
           </div>
         </div>
