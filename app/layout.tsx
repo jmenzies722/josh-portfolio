@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { ScrollToTop } from '@/components/scroll-to-top'
+import { ScrollProgress } from '@/components/scroll-progress'
 import { Analytics } from '@/components/analytics'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -98,6 +99,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col">
+            <ScrollProgress />
             <Header />
             <main className="flex-1">
               {children}
