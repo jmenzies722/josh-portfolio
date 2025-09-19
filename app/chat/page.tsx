@@ -6,7 +6,7 @@ import { MessageCircle, Sparkles, Users, Zap } from 'lucide-react'
 export default function ChatPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Mobile Full-Screen Chat */}
+      {/* Mobile Full-Screen Chat - Clean Build */}
       <div className="flex-1 flex flex-col sm:hidden">
         <AIChat />
       </div>
