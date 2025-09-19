@@ -150,6 +150,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Mobile Chat Link Section */}
+      <section className="md:hidden py-8 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
+        <div className="container-custom relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-6 animate-fade-in-up">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary-600 to-accent-600 text-white mb-4 animate-pulse-slow">
+                <MessageCircle className="h-6 w-6" />
+              </div>
+              <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                Meet <span className="gradient-text">Shua</span>
+              </h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6 animate-fade-in-up px-4" style={{animationDelay: '0.4s'}}>
+                My AI assistant that knows everything about my platform engineering experience and some of my life!
+              </p>
+              <div className="animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+                <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-8 py-4 text-base font-medium">
+                  <Link href="/chat">
+                    <Bot className="mr-2 h-5 w-5" />
+                    Chat with Shua
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AI Chat Section - Desktop Only */}
       <section className="hidden md:block py-12 sm:py-20 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
         <div className="container-custom relative">
