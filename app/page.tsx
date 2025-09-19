@@ -107,11 +107,12 @@ export default function HomePage() {
                     <Image
                       src="/profile-hero.png"
                       alt="Josh Menzies"
-                      width={400}
-                      height={400}
-                      className="w-full h-full rounded-full border-4 border-white/20 dark:border-neutral-700/50 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover"
+                      width={600}
+                      height={600}
+                      className="w-full h-full rounded-full border-4 border-white/30 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image"
                       priority
-                      sizes="(max-width: 640px) 160px, (max-width: 768px) 224px, 384px"
+                      quality={95}
+                      sizes="(max-width: 640px) 160px, (max-width: 768px) 224px, 600px"
                       placeholder="blur"
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />

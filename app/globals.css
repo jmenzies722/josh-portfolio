@@ -103,10 +103,21 @@
       transition: all 0.2s ease;
     }
     
-    .card-interactive:active {
-      transform: scale(0.98);
+      .card-interactive:active {
+        transform: scale(0.98);
+      }
+      
+      /* Enhanced image quality for profile pictures */
+      .profile-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
     }
-  }
 }
 
 @keyframes fadeInUp {
