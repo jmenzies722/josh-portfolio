@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Send, Bot, User, Trash2, Clock, Download, ExternalLink, ThumbsUp, ThumbsDown, Square, Play } from 'lucide-react'
+import { Send, Bot, User, Trash2, Clock, Download, ExternalLink, ThumbsUp, ThumbsDown, Square, Play, ChevronDown } from 'lucide-react'
 
 interface Message {
   id: number
@@ -29,19 +29,58 @@ export function AIChat() {
   const [typingText, setTypingText] = useState('')
   const [showContactPrompt, setShowContactPrompt] = useState(false)
   const [isChatStopped, setIsChatStopped] = useState(false)
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false)
   const messagesContainerRef = useRef<HTMLDivElement>(null)
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight
+      // Use smooth scrolling for better UX
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
+      setShowScrollIndicator(false)
+    }
+  }
+
+  const checkScrollPosition = () => {
+    if (messagesContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = messagesContainerRef.current
+      const isAtBottom = scrollHeight - scrollTop - clientHeight < 50
+      setShowScrollIndicator(!isAtBottom)
     }
   }
 
   useEffect(() => {
     scrollToBottom()
+    // Show scroll indicator briefly when new messages arrive
+    if (messages.length > 1) {
+      setTimeout(() => {
+        checkScrollPosition()
+      }, 100)
+    }
   }, [messages, isLoading, isTyping])
+
+  // Enhanced scrolling for typing animation
+  useEffect(() => {
+    if (isTyping && messagesContainerRef.current) {
+      // Scroll to bottom when typing starts
+      setTimeout(() => {
+        scrollToBottom()
+      }, 100)
+    }
+  }, [isTyping])
+
+  // Add scroll listener for mobile
+  useEffect(() => {
+    const container = messagesContainerRef.current
+    if (container) {
+      container.addEventListener('scroll', checkScrollPosition)
+      return () => container.removeEventListener('scroll', checkScrollPosition)
+    }
+  }, [])
 
   // Cleanup timeouts on component unmount
   useEffect(() => {
@@ -142,10 +181,15 @@ export function AIChat() {
     setTypingText('')
     let index = 0
     
+    // Scroll to bottom when typing starts
+    setTimeout(() => {
+      scrollToBottom()
+    }, 50)
+    
     // More realistic typing speed with slight variations
     const getTypingSpeed = () => {
-      const baseSpeed = 25
-      const variation = Math.random() * 15 + 5 // 5-20ms variation
+      const baseSpeed = 20 // Slightly faster for mobile
+      const variation = Math.random() * 10 + 5 // 5-15ms variation
       return baseSpeed + variation
     }
     
@@ -163,7 +207,7 @@ export function AIChat() {
         
         // Add slight pause for punctuation (like ChatGPT)
         const currentChar = text[index - 1]
-        const pauseTime = ['.', '!', '?', ','].includes(currentChar) ? 150 : 0
+        const pauseTime = ['.', '!', '?', ','].includes(currentChar) ? 100 : 0
         
         typingTimeoutRef.current = setTimeout(() => {
           typeNextChar()
@@ -183,7 +227,7 @@ export function AIChat() {
     }
     
     // Start typing after a brief delay
-    typingTimeoutRef.current = setTimeout(typeNextChar, 200)
+    typingTimeoutRef.current = setTimeout(typeNextChar, 150)
   }
 
   const generateAIResponse = (userInput: string): string => {
@@ -386,7 +430,20 @@ projects, and professional achievements.`
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-4 sm:p-6">
+      <CardContent className="p-4 sm:p-6 relative">
+        {/* Scroll to bottom indicator */}
+        {showScrollIndicator && (
+          <div className="absolute top-2 right-2 z-10">
+            <Button
+              onClick={scrollToBottom}
+              size="sm"
+              className="bg-primary-600 hover:bg-primary-700 text-white shadow-lg animate-bounce"
+            >
+              <ChevronDown className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
+        
         <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 max-h-80 sm:max-h-96 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin">
           {messages.map((message) => (
             <div
@@ -457,8 +514,8 @@ projects, and professional achievements.`
             </div>
           )}
           {isTyping && (
-            <div className="flex gap-2 sm:gap-3 justify-start">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
+            <div className="flex gap-2 sm:gap-3 justify-start animate-fade-in-up">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 animate-pulse-slow">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
@@ -467,11 +524,19 @@ projects, and professional achievements.`
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm max-w-xs sm:max-w-md">
+              <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm max-w-xs sm:max-w-md border border-primary-200/50 dark:border-primary-700/50">
                 <p className="text-xs sm:text-sm leading-relaxed text-neutral-900 dark:text-neutral-100">
                   {typingText}
-                  <span className="animate-blink text-primary-600 dark:text-primary-400 font-bold">|</span>
+                  <span className="animate-blink text-primary-600 dark:text-primary-400 font-bold text-lg">|</span>
                 </p>
+                <div className="flex items-center gap-1 mt-1">
+                  <div className="flex space-x-1">
+                    <div className="w-1 h-1 bg-primary-500 rounded-full animate-pulse"></div>
+                    <div className="w-1 h-1 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-1 h-1 bg-primary-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  </div>
+                  <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">Shua is typing...</span>
+                </div>
               </div>
             </div>
           )}
