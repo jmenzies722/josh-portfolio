@@ -485,7 +485,7 @@ export function AIChat() {
           }
         }
       `}</style>
-      <Card className="h-screen sm:h-full sm:max-w-4xl mx-0 sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden">
+      <Card className="h-screen sm:h-full sm:max-w-4xl mx-0 sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden sm:mb-8">
       {/* Mobile Header */}
       <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-3 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
@@ -532,7 +532,7 @@ export function AIChat() {
       </CardHeader>
       
       {/* Desktop Header */}
-      <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-t-2xl p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 mt-4">
+      <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-t-2xl p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 mt-8">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-3 text-lg">
             <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow aspect-square">

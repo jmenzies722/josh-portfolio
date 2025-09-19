@@ -12,7 +12,7 @@ export default function ChatPage() {
               </div>
       
       {/* Desktop Layout - ChatGPT Style */}
-      <div className="hidden sm:block h-screen flex flex-col">
+      <div className="hidden sm:flex h-screen flex-col">
         {/* Desktop Header */}
         <div className="flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
           <div className="max-w-4xl mx-auto px-6 py-4">
@@ -33,7 +33,7 @@ export default function ChatPage() {
         </div>
 
         {/* Chat Interface - Full Height with proper spacing */}
-        <div className="flex-1 overflow-hidden mt-4">
+        <div className="flex-1 overflow-hidden mt-8">
           <AIChat />
         </div>
       </div>
