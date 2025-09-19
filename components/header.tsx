@@ -54,8 +54,12 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="md:hidden flex items-center justify-center flex-1">
             <ThemeToggle />
+          </div>
+          
+          {/* Mobile menu button - positioned separately */}
+          <div className="md:hidden flex items-center">
             <button
               type="button"
               className="p-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-all duration-200"
