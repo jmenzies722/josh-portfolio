@@ -150,8 +150,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Chat Section */}
-      <section className="py-12 sm:py-20 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
+      {/* AI Chat Section - Desktop Only */}
+      <section className="hidden md:block py-12 sm:py-20 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
         <div className="container-custom relative">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8 sm:mb-12 animate-fade-in-up">

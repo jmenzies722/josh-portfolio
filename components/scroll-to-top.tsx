@@ -68,14 +68,14 @@ export function ScrollToTop() {
         </svg>
         
         {/* Button */}
-        <Button
-          onClick={scrollToTop}
+    <Button
+      onClick={scrollToTop}
           className="absolute inset-0 m-auto w-8 h-8 rounded-full p-0 bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-neutral-200 dark:border-neutral-700"
-          size="sm"
-        >
+      size="sm"
+    >
           <ChevronUp className="h-4 w-4 text-neutral-700 dark:text-neutral-300" />
-          <span className="sr-only">Scroll to top</span>
-        </Button>
+      <span className="sr-only">Scroll to top</span>
+    </Button>
       </div>
     </div>
   )

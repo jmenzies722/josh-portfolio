@@ -32,8 +32,8 @@ export default function ChatPage() {
           </div>
         </div>
 
-        {/* Chat Interface - Full Height */}
-        <div className="flex-1 overflow-hidden">
+        {/* Chat Interface - Full Height with proper spacing */}
+        <div className="flex-1 overflow-hidden mt-4">
           <AIChat />
         </div>
       </div>

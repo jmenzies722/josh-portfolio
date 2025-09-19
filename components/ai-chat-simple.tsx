@@ -89,18 +89,27 @@ export function AIChat() {
     }
   }, [])
 
-  // Enhanced mobile keyboard handling - prevent page scroll
+  // Enhanced mobile keyboard handling - prevent page scroll and keep input fixed
   useEffect(() => {
     const handleVisualViewportChange = () => {
-      // Prevent page scroll when keyboard appears
       if (window.visualViewport) {
         const viewport = window.visualViewport
         const heightDiff = window.innerHeight - viewport.height
         
         if (heightDiff > 0) {
-          // Keyboard is open - adjust viewport
+          // Keyboard is open - prevent page scroll and adjust layout
+          document.body.style.position = 'fixed'
+          document.body.style.top = '0'
+          document.body.style.left = '0'
+          document.body.style.right = '0'
           document.body.style.height = `${viewport.height}px`
           document.body.style.overflow = 'hidden'
+          
+          // Ensure chat container takes full available height
+          const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+          if (chatContainer) {
+            (chatContainer as HTMLElement).style.height = `${viewport.height}px`
+          }
           
           // Scroll chat to bottom
           setTimeout(() => {
@@ -108,8 +117,17 @@ export function AIChat() {
           }, 100)
         } else {
           // Keyboard is closed - restore normal behavior
+          document.body.style.position = ''
+          document.body.style.top = ''
+          document.body.style.left = ''
+          document.body.style.right = ''
           document.body.style.height = 'auto'
           document.body.style.overflow = 'auto'
+          
+          const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+          if (chatContainer) {
+            (chatContainer as HTMLElement).style.height = '100vh'
+          }
           
           setTimeout(() => {
             scrollToBottom()
@@ -145,8 +163,17 @@ export function AIChat() {
 
     return () => {
       // Cleanup
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
       document.body.style.height = 'auto'
       document.body.style.overflow = 'auto'
+      
+      const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+      if (chatContainer) {
+        (chatContainer as HTMLElement).style.height = '100vh'
+      }
       
       if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', handleVisualViewportChange)
@@ -425,7 +452,7 @@ export function AIChat() {
   }
 
   return (
-    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden">
+    <Card className="h-screen sm:h-full sm:max-w-4xl mx-0 sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden">
       {/* Mobile Header */}
       <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-3 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
@@ -472,7 +499,7 @@ export function AIChat() {
       </CardHeader>
       
       {/* Desktop Header */}
-      <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-t-2xl p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
+      <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-t-2xl p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 mt-4">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-3 text-lg">
             <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow aspect-square">
@@ -552,7 +579,7 @@ projects, and professional achievements.`
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0 overflow-hidden">
+      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0 overflow-hidden safe-area-pb">
         {/* Spacer to separate header from messages */}
         <div className="h-4 sm:h-8 flex-shrink-0"></div>
         {/* Scroll to bottom indicator */}
@@ -725,7 +752,7 @@ projects, and professional achievements.`
           )}
           
           {/* Input Area - Enhanced Mobile Design */}
-          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none backdrop-blur-sm">
+          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none backdrop-blur-sm safe-area-pb">
               <input
                 type="text"
                 value={input}
