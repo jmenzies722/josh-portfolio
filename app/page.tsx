@@ -105,7 +105,7 @@ export default function HomePage() {
                   {/* Profile Image */}
                   <div className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-96 lg:h-96">
                     <Image
-                      src="/IMG_2885.webp"
+                      src="/profile-hero.png"
                       alt="Josh Menzies"
                       width={400}
                       height={400}

@@ -311,7 +311,7 @@ export function AIChat() {
           <div className="flex items-center gap-3 text-xl">
             <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
               <Image
-                src="/IMG_2885.jpg"
+                src="/profile-screenshot.png"
                 alt="Josh Menzies"
                 width={40}
                 height={40}
@@ -396,7 +396,7 @@ projects, and professional achievements.`
               {!message.isUser && (
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
                   <Image
-                    src="/IMG_2885.jpg"
+                    src="/profile-screenshot.png"
                     alt="Josh Menzies"
                     width={40}
                     height={40}
