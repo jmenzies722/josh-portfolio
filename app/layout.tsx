@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   keywords: ['DevOps Engineer', 'Platform Engineer', 'AWS', 'Kubernetes', 'Terraform', 'Observability', 'CI/CD'],
   authors: [{ name: 'Josh M' }],
   creator: 'Josh M',
+  icons: {
+    icon: '/IMG_2885.webp',
+    shortcut: '/IMG_2885.webp',
+    apple: '/IMG_2885.webp',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -63,6 +68,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Favicon */}
+        <link rel="icon" href="/IMG_2885.webp" type="image/webp" />
+        <link rel="shortcut icon" href="/IMG_2885.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/IMG_2885.webp" />
+        
         {/* iPhone-specific meta tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -73,10 +83,9 @@ export default function RootLayout({
         <meta name="msapplication-tap-highlight" content="no" />
         
         {/* iPhone splash screens */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/IMG_2885.webp" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/IMG_2885.webp" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/IMG_2885.webp" />
         
         {/* iPhone status bar */}
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
