@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Github, Linkedin, Mail, ArrowRight, Code, Zap, Target } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowRight, Code, Zap, Target, BookOpen, FileText, ExternalLink } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -18,6 +18,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 bg-neutral-800 hover:bg-blue-600 rounded-md transition-colors duration-200"
+                title="GitHub"
               >
                 <Github className="h-3.5 w-3.5 text-gray-400 hover:text-white transition-colors duration-200" />
               </a>
@@ -26,12 +27,23 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 bg-neutral-800 hover:bg-blue-600 rounded-md transition-colors duration-200"
+                title="LinkedIn"
               >
                 <Linkedin className="h-3.5 w-3.5 text-gray-400 hover:text-white transition-colors duration-200" />
               </a>
               <a
+                href="https://medium.com/@jmenzies722"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 bg-neutral-800 hover:bg-green-600 rounded-md transition-colors duration-200"
+                title="Medium Blog"
+              >
+                <BookOpen className="h-3.5 w-3.5 text-gray-400 hover:text-white transition-colors duration-200" />
+              </a>
+              <a
                 href="mailto:jmenzies722@gmail.com"
                 className="p-1.5 bg-neutral-800 hover:bg-blue-600 rounded-md transition-colors duration-200"
+                title="Email"
               >
                 <Mail className="h-3.5 w-3.5 text-gray-400 hover:text-white transition-colors duration-200" />
               </a>

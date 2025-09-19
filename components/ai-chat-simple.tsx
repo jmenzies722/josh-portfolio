@@ -89,71 +89,71 @@ export function AIChat() {
     }
   }, [])
 
-  // Enhanced mobile keyboard handling
+  // Enhanced mobile keyboard handling - prevent page scroll
   useEffect(() => {
-    const handleResize = () => {
-      // Scroll to bottom when keyboard appears/disappears
-      setTimeout(() => {
-        scrollToBottom()
-      }, 100)
+    const handleVisualViewportChange = () => {
+      // Prevent page scroll when keyboard appears
+      if (window.visualViewport) {
+        const viewport = window.visualViewport
+        const heightDiff = window.innerHeight - viewport.height
+        
+        if (heightDiff > 0) {
+          // Keyboard is open - adjust viewport
+          document.body.style.height = `${viewport.height}px`
+          document.body.style.overflow = 'hidden'
+          
+          // Scroll chat to bottom
+          setTimeout(() => {
+            scrollToBottom()
+          }, 100)
+        } else {
+          // Keyboard is closed - restore normal behavior
+          document.body.style.height = 'auto'
+          document.body.style.overflow = 'auto'
+          
+          setTimeout(() => {
+            scrollToBottom()
+          }, 100)
+        }
+      }
     }
 
     const handleFocus = () => {
-      // Scroll to bottom when input is focused
+      // Prevent page scroll on input focus
       setTimeout(() => {
         scrollToBottom()
       }, 300)
     }
 
     const handleBlur = () => {
-      // Scroll to bottom when input loses focus
+      // Restore normal behavior on blur
       setTimeout(() => {
         scrollToBottom()
       }, 100)
     }
 
-    // Handle viewport changes (keyboard show/hide)
-    const handleViewportChange = () => {
-      setTimeout(() => {
-        scrollToBottom()
-      }, 150)
-    }
-
-    // Handle visual viewport changes (mobile keyboard)
-    const handleVisualViewportChange = () => {
-      setTimeout(() => {
-        scrollToBottom()
-      }, 100)
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('orientationchange', handleViewportChange)
-    
     // Add visual viewport listener for mobile keyboard
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', handleVisualViewportChange)
     }
     
-    const inputElement = document.querySelector('input[placeholder*="Ask about Josh"]') as HTMLInputElement
+    const inputElement = document.querySelector('input[placeholder*="Ask about Josh"], input[placeholder*="Shua is typing"], input[placeholder*="Chat is paused"]') as HTMLInputElement
     if (inputElement) {
       inputElement.addEventListener('focus', handleFocus)
       inputElement.addEventListener('blur', handleBlur)
-      return () => {
-        window.removeEventListener('resize', handleResize)
-        window.removeEventListener('orientationchange', handleViewportChange)
-        if (window.visualViewport) {
-          window.visualViewport.removeEventListener('resize', handleVisualViewportChange)
-        }
-        inputElement.removeEventListener('focus', handleFocus)
-        inputElement.removeEventListener('blur', handleBlur)
-      }
     }
 
     return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleViewportChange)
+      // Cleanup
+      document.body.style.height = 'auto'
+      document.body.style.overflow = 'auto'
+      
       if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', handleVisualViewportChange)
+      }
+      if (inputElement) {
+        inputElement.removeEventListener('focus', handleFocus)
+        inputElement.removeEventListener('blur', handleBlur)
       }
     }
   }, [])
@@ -554,7 +554,7 @@ projects, and professional achievements.`
       </CardHeader>
       <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0 overflow-hidden">
         {/* Spacer to separate header from messages */}
-        <div className="h-4 sm:h-6 flex-shrink-0"></div>
+        <div className="h-4 sm:h-8 flex-shrink-0"></div>
         {/* Scroll to bottom indicator */}
         {showScrollIndicator && (
           <div className="absolute top-2 right-2 z-10">
@@ -702,7 +702,7 @@ projects, and professional achievements.`
                   setInput(suggestion)
                   if (messages.length > 3) setShowContactPrompt(true)
                 }}
-                  className="px-2 py-1 text-xs sm:text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-200 font-medium"
+                  className="px-3 py-2 text-xs sm:text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-all duration-300 font-medium hover:scale-105 hover:shadow-md"
               >
                 {suggestion}
               </button>
@@ -716,7 +716,7 @@ projects, and professional achievements.`
             <Button
               onClick={() => setInput("Tell me about Josh's platform engineering experience")}
               variant="outline"
-                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-sm sm:text-base font-medium rounded-lg shadow-sm hover:shadow-md"
+                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-300 text-sm sm:text-base font-medium rounded-xl shadow-md hover:shadow-lg hover:scale-105"
             >
                 <Bot className="h-5 w-5 mr-2" />
               Ask Shua About Josh
@@ -725,7 +725,7 @@ projects, and professional achievements.`
           )}
           
           {/* Input Area - Enhanced Mobile Design */}
-          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none">
+          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none backdrop-blur-sm">
               <input
                 type="text"
                 value={input}
@@ -738,17 +738,17 @@ projects, and professional achievements.`
                       ? "Shua is typing..." 
                       : "Ask Shua about Josh's expertise..."
                 }
-                className={`flex-1 px-3 py-2 sm:px-4 sm:py-3 border rounded-lg backdrop-blur-sm text-sm sm:text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
+                className={`flex-1 px-3 py-2 sm:px-4 sm:py-3 border rounded-xl backdrop-blur-sm text-sm sm:text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-300 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
                   isChatStopped 
                     ? 'border-orange-200 dark:border-orange-700 bg-orange-50/80 dark:bg-orange-900/20 focus:ring-orange-500 focus:border-orange-500' 
-                    : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 focus:ring-primary-500 focus:border-primary-500'
+                    : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 focus:ring-primary-500 focus:border-primary-500 hover:border-primary-300 dark:hover:border-primary-600'
                 }`}
                 disabled={isChatStopped}
               />
             <Button 
               onClick={handleSend} 
               disabled={isLoading || isTyping || !input.trim() || isChatStopped}
-              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
+              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
                 isChatStopped 
                   ? 'bg-orange-500 hover:bg-orange-600 text-white' 
                   : 'bg-gradient-to-br from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white'

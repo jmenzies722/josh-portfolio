@@ -5,7 +5,6 @@ import { ProjectCard } from '@/components/project-card'
 import { TypingAnimation } from '@/components/typing-animation'
 import { StatsCounter } from '@/components/stats-counter'
 import { AIChat } from '@/components/ai-chat-simple'
-import { MobileChatPreview } from '@/components/mobile-chat-preview'
 import { projects, techStack, personalInfo } from '@/lib/data'
 import { Download, ArrowRight, Code, Cloud, Brain, MessageCircle, Heart, Lightbulb, Users, Target, Bot } from 'lucide-react'
 
@@ -78,14 +77,14 @@ export default function HomePage() {
                 {/* CTA Buttons */}
                 <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                  <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
+                  <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
                 <Link href="/chat">
                       <Bot className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
                   Ask Shua
                       <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </Button>
-                  <Button variant="outline" size="lg" asChild className="group border-2 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
+                  <Button variant="outline" size="lg" asChild className="group border-2 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
                 <a href="/menzies-resume.pdf" target="_blank" rel="noopener noreferrer">
                       <Download className="mr-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce" />
                   Download Resume
@@ -95,8 +94,7 @@ export default function HomePage() {
                 
                 {/* Mobile Chat Preview */}
                 <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                  <MobileChatPreview />
-                </div>
+                  </div>
                 </div>
               </div>
               
