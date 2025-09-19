@@ -42,3 +42,4 @@ const nextConfig = {
 }
 
 module.exports = withBundleAnalyzer(withMDX(nextConfig))
+// Force Vercel to use latest commit - Thu Sep 18 23:30:53 EDT 2025
