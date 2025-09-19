@@ -1,4 +1,4 @@
-in the chat import Link from 'next/link'
+import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 

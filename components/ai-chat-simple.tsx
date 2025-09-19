@@ -63,15 +63,22 @@ export function AIChat() {
     }
   }, [messages, isLoading, isTyping])
 
-  // Enhanced scrolling for typing animation
+  // Enhanced scrolling for typing animation and AI responses
   useEffect(() => {
-    if (isTyping && messagesContainerRef.current) {
-      // Scroll to bottom when typing starts
+    if ((isTyping || isLoading) && messagesContainerRef.current) {
+      // Scroll to bottom when typing/loading starts
       setTimeout(() => {
         scrollToBottom()
       }, 100)
+      
+      // Continue scrolling during typing animation and loading
+      const interval = setInterval(() => {
+        scrollToBottom()
+      }, 200)
+      
+      return () => clearInterval(interval)
     }
-  }, [isTyping])
+  }, [isTyping, isLoading])
 
   // Add scroll listener for mobile
   useEffect(() => {
@@ -559,7 +566,7 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div ref={messagesContainerRef} className="space-y-4 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin min-h-0 px-4 sm:px-6 pb-4">
+        <div ref={messagesContainerRef} className="space-y-4 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain desktop-scrollbar min-h-0 px-4 sm:px-6 pb-4">
           {messages.map((message) => (
             <div
               key={message.id}

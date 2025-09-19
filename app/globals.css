@@ -230,6 +230,47 @@
       .dark .mobile-suggestion-chip {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
+      
+      /* Desktop scrollbar styling */
+      .desktop-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #d1d5db #f3f4f6;
+      }
+      
+      .dark .desktop-scrollbar {
+        scrollbar-color: #4b5563 #1f2937;
+      }
+      
+      .desktop-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .desktop-scrollbar::-webkit-scrollbar-track {
+        background: #f3f4f6;
+        border-radius: 4px;
+      }
+      
+      .dark .desktop-scrollbar::-webkit-scrollbar-track {
+        background: #1f2937;
+      }
+      
+      .desktop-scrollbar::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 4px;
+        transition: background 0.2s ease;
+      }
+      
+      .desktop-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+      }
+      
+      .dark .desktop-scrollbar::-webkit-scrollbar-thumb {
+        background: #4b5563;
+      }
+      
+      .dark .desktop-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #6b7280;
+      }
     }
     
     /* App-like mobile typography */
