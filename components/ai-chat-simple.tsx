@@ -89,7 +89,7 @@ export function AIChat() {
     }
   }, [])
 
-  // Enhanced mobile keyboard handling - prevent page scroll and keep input fixed
+  // Enhanced mobile keyboard handling - allow input to be pushed up with keyboard
   useEffect(() => {
     const handleVisualViewportChange = () => {
       if (window.visualViewport) {
@@ -97,36 +97,43 @@ export function AIChat() {
         const heightDiff = window.innerHeight - viewport.height
         
         if (heightDiff > 0) {
-          // Keyboard is open - prevent page scroll and adjust layout
-          document.body.style.position = 'fixed'
-          document.body.style.top = '0'
-          document.body.style.left = '0'
-          document.body.style.right = '0'
-          document.body.style.height = `${viewport.height}px`
-          document.body.style.overflow = 'hidden'
-          
-          // Ensure chat container takes full available height
+          // Keyboard is open - adjust chat container height to available viewport
           const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+          const inputContainer = document.querySelector('.mobile-input-container')
+          
           if (chatContainer) {
             (chatContainer as HTMLElement).style.height = `${viewport.height}px`
+            (chatContainer as HTMLElement).style.position = 'fixed'
+            (chatContainer as HTMLElement).style.top = '0'
+            (chatContainer as HTMLElement).style.left = '0'
+            (chatContainer as HTMLElement).style.right = '0'
+            (chatContainer as HTMLElement).style.bottom = '0'
           }
           
-          // Scroll chat to bottom
+          if (inputContainer) {
+            inputContainer.classList.add('keyboard-open')
+          }
+          
+          // Scroll chat to bottom to show the input field
           setTimeout(() => {
             scrollToBottom()
           }, 100)
         } else {
           // Keyboard is closed - restore normal behavior
-          document.body.style.position = ''
-          document.body.style.top = ''
-          document.body.style.left = ''
-          document.body.style.right = ''
-          document.body.style.height = 'auto'
-          document.body.style.overflow = 'auto'
-          
           const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+          const inputContainer = document.querySelector('.mobile-input-container')
+          
           if (chatContainer) {
             (chatContainer as HTMLElement).style.height = '100vh'
+            (chatContainer as HTMLElement).style.position = ''
+            (chatContainer as HTMLElement).style.top = ''
+            (chatContainer as HTMLElement).style.left = ''
+            (chatContainer as HTMLElement).style.right = ''
+            (chatContainer as HTMLElement).style.bottom = ''
+          }
+          
+          if (inputContainer) {
+            inputContainer.classList.remove('keyboard-open')
           }
           
           setTimeout(() => {
@@ -137,14 +144,14 @@ export function AIChat() {
     }
 
     const handleFocus = () => {
-      // Prevent page scroll on input focus
+      // Allow natural keyboard behavior and scroll to show input
       setTimeout(() => {
         scrollToBottom()
       }, 300)
     }
 
     const handleBlur = () => {
-      // Restore normal behavior on blur
+      // Scroll to bottom when input loses focus
       setTimeout(() => {
         scrollToBottom()
       }, 100)
@@ -163,16 +170,20 @@ export function AIChat() {
 
     return () => {
       // Cleanup
-      document.body.style.position = ''
-      document.body.style.top = ''
-      document.body.style.left = ''
-      document.body.style.right = ''
-      document.body.style.height = 'auto'
-      document.body.style.overflow = 'auto'
-      
       const chatContainer = document.querySelector('.mobile-chat-keyboard-handler')
+      const inputContainer = document.querySelector('.mobile-input-container')
+      
       if (chatContainer) {
         (chatContainer as HTMLElement).style.height = '100vh'
+        (chatContainer as HTMLElement).style.position = ''
+        (chatContainer as HTMLElement).style.top = ''
+        (chatContainer as HTMLElement).style.left = ''
+        (chatContainer as HTMLElement).style.right = ''
+        (chatContainer as HTMLElement).style.bottom = ''
+      }
+      
+      if (inputContainer) {
+        inputContainer.classList.remove('keyboard-open')
       }
       
       if (window.visualViewport) {
@@ -452,7 +463,29 @@ export function AIChat() {
   }
 
   return (
-    <Card className="h-screen sm:h-full sm:max-w-4xl mx-0 sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden">
+    <>
+      <style jsx>{`
+        @media screen and (max-width: 640px) {
+          .mobile-chat-keyboard-handler {
+            height: 100vh;
+            transition: height 0.3s ease;
+          }
+          
+          .mobile-input-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: transform 0.3s ease;
+          }
+          
+          .mobile-input-container.keyboard-open {
+            transform: translateY(-env(keyboard-inset-height, 0px));
+          }
+        }
+      `}</style>
+      <Card className="h-screen sm:h-full sm:max-w-4xl mx-0 sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 flex flex-col rounded-none sm:rounded-2xl relative overflow-hidden">
       {/* Mobile Header */}
       <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-3 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
@@ -752,7 +785,7 @@ projects, and professional achievements.`
           )}
           
           {/* Input Area - Enhanced Mobile Design */}
-          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none backdrop-blur-sm safe-area-pb">
+          <div className="mobile-input-container fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none backdrop-blur-sm safe-area-pb pb-safe">
               <input
                 type="text"
                 value={input}
@@ -787,5 +820,6 @@ projects, and professional achievements.`
         </div>
       </CardContent>
     </Card>
+    </>
   )
 }
