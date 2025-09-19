@@ -83,6 +83,47 @@
         background: #171717;
         border-top-color: #404040;
       }
+      
+      /* Enhanced mobile chat experience */
+      .mobile-chat-fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background: white;
+        overflow: hidden;
+      }
+      
+      .dark .mobile-chat-fullscreen {
+        background: #171717;
+      }
+      
+      /* Mobile keyboard handling */
+      .mobile-chat-messages {
+        height: calc(100vh - 140px);
+        height: calc(100dvh - 140px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Input area that stays visible */
+      .mobile-chat-input-area {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        padding: 1rem;
+        z-index: 60;
+      }
+      
+      .dark .mobile-chat-input-area {
+        background: #171717;
+        border-top-color: #404040;
+      }
     }
     
     /* App-like mobile typography */
