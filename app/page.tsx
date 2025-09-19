@@ -106,7 +106,7 @@ export default function HomePage() {
                   <div className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-96 lg:h-96">
                     <Image
                       src="/profile-hero.png"
-                      alt="Josh Menzies"
+                      alt="Josh M"
                       width={600}
                       height={600}
                       className="w-full h-full rounded-full border-4 border-white/30 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image"

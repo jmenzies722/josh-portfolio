@@ -201,7 +201,7 @@ export function AIChat() {
             <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
               <Image
                 src="/IMG_2885.jpg"
-                alt="Josh Menzies"
+                alt="Josh M"
                 width={40}
                 height={40}
                 className="w-full h-full object-cover"

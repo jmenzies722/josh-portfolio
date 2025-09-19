@@ -1,4 +1,4 @@
-# Josh Menzies
+# Josh M
 ## DevOps & Platform Engineer
 
 **Location:** Babylon, NY  

@@ -20,7 +20,7 @@ export function Logo({ className = '', size = 'md' }: LogoProps) {
     >
       <Image
         src="/IMG_2885.jpg"
-        alt="Josh Menzies"
+        alt="Josh M"
         width={48}
         height={48}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-200"

@@ -1,4 +1,4 @@
-# 🚀 Josh Menzies - DevOps & Platform Engineer Portfolio
+# 🚀 Josh M - DevOps & Platform Engineer Portfolio
 
 A stunning, mobile-optimized portfolio website showcasing expertise in DevOps, Platform Engineering, Cloud Infrastructure, and organizational transformation. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
@@ -198,7 +198,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 **Contact**
 
-**Josh Menzies** - Strategic Platform Engineer
+**Josh M** - Strategic Platform Engineer
 - **Email**: jmenzies722@gmail.com
 - **LinkedIn**: [linkedin.com/in/joshmenzies](https://linkedin.com/in/joshmenzies)
 - **Portfolio**: [joshmenzies.dev](https://joshmenzies.dev)
@@ -207,4 +207,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ⭐ **Star this repository if you found it helpful!**
 
-Built with ❤️ by Josh Menzies using Next.js, TypeScript, and Tailwind CSS.# Force deployment update
+Built with ❤️ by Josh M using Next.js, TypeScript, and Tailwind CSS.# Force deployment update

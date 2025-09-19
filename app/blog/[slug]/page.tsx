@@ -481,7 +481,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} - Josh Menzies Blog`,
+    title: `${post.title} - Josh M Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -577,7 +577,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-black dark:text-white mb-2">
-                      Josh Menzies
+                      Josh M
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Strategic Platform Engineer passionate about building scalable cloud infrastructure 

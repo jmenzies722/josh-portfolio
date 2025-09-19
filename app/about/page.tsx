@@ -17,7 +17,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 <Image
                   src="/profile.webp"
-                  alt="Josh Menzies"
+                  alt="Josh M"
                   width={256}
                   height={256}
                   className="relative w-full h-full rounded-full border-4 border-primary-200 dark:border-primary-700 shadow-2xl object-cover group-hover:scale-105 transition-transform duration-500"

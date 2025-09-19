@@ -10,22 +10,22 @@ import { Analytics } from '@/components/analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Josh Menzies - DevOps & Platform Engineer',
+  title: 'Josh M - DevOps & Platform Engineer',
   description: 'Strategic DevOps/Platform Engineer with expertise in AWS, Kubernetes, Terraform, and observability. Driving organizational transformation through platform-centric infrastructure.',
   keywords: ['DevOps Engineer', 'Platform Engineer', 'AWS', 'Kubernetes', 'Terraform', 'Observability', 'CI/CD'],
-  authors: [{ name: 'Josh Menzies' }],
-  creator: 'Josh Menzies',
+  authors: [{ name: 'Josh M' }],
+  creator: 'Josh M',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://joshmenzies.dev',
-    title: 'Josh Menzies - DevOps & Platform Engineer',
+    title: 'Josh M - DevOps & Platform Engineer',
     description: 'Strategic DevOps/Platform Engineer with expertise in AWS, Kubernetes, Terraform, and observability.',
-    siteName: 'Josh Menzies Portfolio',
+    siteName: 'Josh M Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Josh Menzies - DevOps & Platform Engineer',
+    title: 'Josh M - DevOps & Platform Engineer',
     description: 'Strategic DevOps/Platform Engineer with expertise in AWS, Kubernetes, Terraform, and observability.',
     creator: '@jmenzies722',
   },
@@ -66,7 +66,7 @@ export default function RootLayout({
         {/* iPhone-specific meta tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Josh Menzies" />
+        <meta name="apple-mobile-web-app-title" content="Josh M" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#000000" />

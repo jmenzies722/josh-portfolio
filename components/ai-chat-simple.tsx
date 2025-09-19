@@ -262,7 +262,7 @@ export function AIChat() {
     }
     
     if (input.includes('everything') || input.includes('tell me everything') || input.includes('complete picture') || input.includes('all about')) {
-      return "Josh Menzies is a 24-year-old Strategic Platform Engineer from NYC who's making serious waves in the tech industry! Born July 22nd, 2001, he has a Computer Science background with a CS minor from University of Hartford. His career journey is impressive - he started as a System Support Engineer at Nectar Services Corp in November 2023, maintaining 99.9% uptime for VoIP platforms, then rapidly advanced to DevOps Engineer in February 2024. He's delivered incredible business impact: 20% faster deployments, 40% faster incident detection, and 25% reduction in manual processes. His expertise spans AWS, Kubernetes, Terraform, CI/CD, and observability solutions. Beyond work, he's passionate about basketball, learning French and Spanish, exploring NYC culture, and designing AI applications. He's fun, adventurous, curious, and brings a perfect blend of technical excellence and collaborative energy to any team!"
+      return "Josh M is a 24-year-old Strategic Platform Engineer from NYC who's making serious waves in the tech industry! Born July 22nd, 2001, he has a Computer Science background with a CS minor from University of Hartford. His career journey is impressive - he started as a System Support Engineer at Nectar Services Corp in November 2023, maintaining 99.9% uptime for VoIP platforms, then rapidly advanced to DevOps Engineer in February 2024. He's delivered incredible business impact: 20% faster deployments, 40% faster incident detection, and 25% reduction in manual processes. His expertise spans AWS, Kubernetes, Terraform, CI/CD, and observability solutions. Beyond work, he's passionate about basketball, learning French and Spanish, exploring NYC culture, and designing AI applications. He's fun, adventurous, curious, and brings a perfect blend of technical excellence and collaborative energy to any team!"
     }
     
     if (input.includes('skills') || input.includes('technologies') || input.includes('tech stack')) {
@@ -298,7 +298,7 @@ export function AIChat() {
     }
     
     if (input.includes('summary') || input.includes('overview') || input.includes('about')) {
-      return "Josh Menzies is a 24-year-old Strategic Platform Engineer based in NYC, born July 22nd, 2001. With a Computer Science background and CS minor from University of Hartford, he's delivered significant business impact through platform engineering transformations: 20% faster deployments, 40% faster incident detection, and 25% reduction in manual processes. His expertise spans AWS, Kubernetes, Terraform, and observability solutions. Beyond technical skills, he's passionate about basketball, learning French and Spanish, and exploring emerging technologies. His career progression from System Support to DevOps Engineer demonstrates his technical expertise and ability to deliver measurable results."
+      return "Josh M is a 24-year-old Strategic Platform Engineer based in NYC, born July 22nd, 2001. With a Computer Science background and CS minor from University of Hartford, he's delivered significant business impact through platform engineering transformations: 20% faster deployments, 40% faster incident detection, and 25% reduction in manual processes. His expertise spans AWS, Kubernetes, Terraform, and observability solutions. Beyond technical skills, he's passionate about basketball, learning French and Spanish, and exploring emerging technologies. His career progression from System Support to DevOps Engineer demonstrates his technical expertise and ability to deliver measurable results."
     }
     
     return "Josh is a Strategic Platform Engineer with proven expertise in AWS, Kubernetes, Terraform, and observability solutions. He's delivered measurable business impact through platform engineering transformations and has a track record of driving organizational change. His technical depth combined with collaborative approach makes him an ideal candidate for engineering leadership roles. What specific aspect of his expertise would you like to explore?"
@@ -312,7 +312,7 @@ export function AIChat() {
             <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
               <Image
                 src="/profile-screenshot.png"
-                alt="Josh Menzies"
+                alt="Josh M"
                 width={40}
                 height={40}
                 className="w-full h-full object-cover"
@@ -336,7 +336,7 @@ export function AIChat() {
             </Button>
             <Button
               onClick={() => {
-                const conversation = `Conversation with Josh Menzies - Platform Engineer
+                const conversation = `Conversation with Josh M - Platform Engineer
 Generated on: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
 Portfolio: https://joshmenzies.dev
 
@@ -397,7 +397,7 @@ projects, and professional achievements.`
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
                   <Image
                     src="/profile-screenshot.png"
-                    alt="Josh Menzies"
+                    alt="Josh M"
                     width={40}
                     height={40}
                     className="w-full h-full object-cover"
@@ -441,7 +441,7 @@ projects, and professional achievements.`
               <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
                 <Image
                   src="/IMG_2885.jpg"
-                  alt="Josh Menzies"
+                  alt="Josh M"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"
@@ -461,7 +461,7 @@ projects, and professional achievements.`
               <div className="w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
                 <Image
                   src="/IMG_2885.jpg"
-                  alt="Josh Menzies"
+                  alt="Josh M"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"

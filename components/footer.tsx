@@ -10,7 +10,7 @@ export function Footer() {
           {/* Left: Brand & Social */}
           <div className="flex items-center gap-4">
             <h3 className="text-lg font-bold text-white">
-              Josh Menzies
+              Josh M
             </h3>
             <div className="hidden sm:flex items-center gap-2">
               <a
