@@ -4,7 +4,7 @@
 **Location:** Babylon, NY  
 **Phone:** (631) 332-4945  
 **Email:** jmenzies722@gmail.com  
-**LinkedIn:** linkedin.com/in/josh-m123456  
+**LinkedIn:** https://www.linkedin.com/in/josh-m123456/  
 **GitHub:** github.com/jmenzies722  
 
 ---

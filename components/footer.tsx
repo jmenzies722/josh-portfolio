@@ -74,7 +74,7 @@ export function Footer() {
               <Github className="h-4 w-4 text-gray-400 hover:text-white transition-colors duration-200" />
             </a>
             <a
-              href="https://linkedin.com/in/josh-menzies"
+              href="https://www.linkedin.com/in/josh-m123456/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 bg-neutral-800 hover:bg-blue-600 rounded-lg transition-colors duration-200"
