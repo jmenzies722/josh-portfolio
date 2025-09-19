@@ -553,6 +553,8 @@ projects, and professional achievements.`
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0 overflow-hidden">
+        {/* Spacer to separate header from messages */}
+        <div className="h-4 sm:h-6 flex-shrink-0"></div>
         {/* Scroll to bottom indicator */}
         {showScrollIndicator && (
           <div className="absolute top-2 right-2 z-10">
@@ -573,7 +575,7 @@ projects, and professional achievements.`
               className={`flex gap-2 sm:gap-3 ${message.isUser ? 'justify-end' : 'justify-start'}`}
             >
               {!message.isUser && (
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square ring-2 ring-primary-100 dark:ring-primary-800">
                   <Image
                     src="/profile-screenshot.png"
                     alt="Josh M"
@@ -584,32 +586,32 @@ projects, and professional achievements.`
                 </div>
               )}
               <div
-                className={`max-w-[80%] sm:max-w-md px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-sm ${
+                className={`max-w-[80%] sm:max-w-md px-4 py-3 sm:px-5 sm:py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ${
                   message.isUser
-                    ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto rounded-br-md'
-                    : 'bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-bl-md'
+                    ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto rounded-br-lg border border-primary-500/20'
+                    : 'bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-bl-lg border border-neutral-200 dark:border-neutral-700'
                 }`}
               >
                 <p className="text-sm sm:text-sm leading-relaxed">{message.text}</p>
-                <div className="flex items-center justify-between mt-1">
-                  <div className="flex items-center gap-1 text-xs opacity-70">
-                    <Clock className="h-2 w-2 sm:h-3 sm:w-3" />
+                <div className="flex items-center justify-between mt-2">
+                  <div className="flex items-center gap-1 text-xs opacity-60">
+                    <Clock className="h-3 w-3" />
                     <span className="text-xs">{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                   </div>
                   {!message.isUser && (
                     <div className="flex items-center gap-1">
-                      <button className="p-1 hover:bg-white/20 rounded-full transition-colors">
-                        <ThumbsUp className="h-2 w-2 sm:h-3 sm:w-3" />
+                      <button className="p-1.5 hover:bg-white/10 dark:hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110">
+                        <ThumbsUp className="h-3 w-3" />
                       </button>
-                      <button className="p-1 hover:bg-white/20 rounded-full transition-colors">
-                        <ThumbsDown className="h-2 w-2 sm:h-3 sm:w-3" />
+                      <button className="p-1.5 hover:bg-white/10 dark:hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110">
+                        <ThumbsDown className="h-3 w-3" />
                       </button>
                     </div>
                   )}
                 </div>
               </div>
               {message.isUser && (
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-md flex-shrink-0 aspect-square">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-lg flex-shrink-0 aspect-square ring-2 ring-neutral-200 dark:ring-neutral-700">
                   <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
               )}
@@ -617,7 +619,7 @@ projects, and professional achievements.`
           ))}
           {isLoading && (
             <div className="flex gap-2 sm:gap-3 justify-start">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square ring-2 ring-primary-100 dark:ring-primary-800">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
