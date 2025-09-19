@@ -41,7 +41,7 @@ export default function HomePage() {
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-100 leading-tight">
                     Josh{' '}
                     <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient">
-                      Menzies
+                      M
                     </span>
                   </h1>
                 </div>

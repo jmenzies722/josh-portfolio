@@ -29,7 +29,7 @@ export function Header() {
           <div className="flex items-center space-x-3">
             <Logo size="sm" />
             <Link href="/" className="text-xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
-              Josh <span className="gradient-text">Menzies</span>
+              Josh <span className="gradient-text">M</span>
             </Link>
           </div>
 
