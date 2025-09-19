@@ -353,13 +353,13 @@ export function AIChat() {
       <CardHeader className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 dark:from-primary-600/20 dark:to-accent-600/20 rounded-t-xl p-4 sm:p-6">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow aspect-square">
               <Image
                 src="/profile-screenshot.png"
                 alt="Josh M"
                 width={40}
                 height={40}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover aspect-square"
               />
             </div>
             <span className="gradient-text font-bold text-sm sm:text-base lg:text-lg">Shua - Josh's AI Assistant</span>
@@ -451,13 +451,13 @@ projects, and professional achievements.`
               className={`flex gap-2 sm:gap-3 ${message.isUser ? 'justify-end' : 'justify-start'}`}
             >
               {!message.isUser && (
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square">
                   <Image
                     src="/profile-screenshot.png"
                     alt="Josh M"
                     width={40}
                     height={40}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover aspect-square"
                   />
                 </div>
               )}
@@ -487,7 +487,7 @@ projects, and professional achievements.`
                 </div>
               </div>
               {message.isUser && (
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-md flex-shrink-0">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500 flex items-center justify-center shadow-md flex-shrink-0 aspect-square">
                   <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
               )}
@@ -495,13 +495,13 @@ projects, and professional achievements.`
           ))}
           {isLoading && (
             <div className="flex gap-2 sm:gap-3 justify-start">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
                   width={40}
                   height={40}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover aspect-square"
                 />
               </div>
               <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm">
@@ -515,13 +515,13 @@ projects, and professional achievements.`
           )}
           {isTyping && (
             <div className="flex gap-2 sm:gap-3 justify-start animate-fade-in-up">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 animate-pulse-slow">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 animate-pulse-slow aspect-square">
                 <Image
                   src="/IMG_2885.jpg"
                   alt="Josh M"
                   width={40}
                   height={40}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover aspect-square"
                 />
               </div>
               <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 px-3 sm:px-4 py-2 sm:py-3 rounded-xl shadow-sm max-w-xs sm:max-w-md border border-primary-200/50 dark:border-primary-700/50">
