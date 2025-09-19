@@ -32,7 +32,7 @@ export default function ChatPage() {
           </div>
         </div>
 
-        {/* Chat Interface - Full Height with proper spacing */}
+        {/* Chat Interface - Full Height with proper spacing - Updated */}
         <div className="flex-1 overflow-hidden mt-8">
           <AIChat />
         </div>
