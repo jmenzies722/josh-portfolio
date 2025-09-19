@@ -425,7 +425,7 @@ export function AIChat() {
   }
 
   return (
-    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative">
+    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative overflow-hidden">
       {/* Mobile Header */}
       <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-3 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
@@ -552,7 +552,7 @@ projects, and professional achievements.`
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0">
+      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0 overflow-hidden">
         {/* Scroll to bottom indicator */}
         {showScrollIndicator && (
           <div className="absolute top-2 right-2 z-10">
@@ -566,7 +566,7 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain desktop-scrollbar min-h-0 px-4 sm:px-6 pb-4">
+        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain desktop-scrollbar min-h-0 px-4 sm:px-6 pb-4 max-h-[calc(100vh-200px)] sm:max-h-[calc(100vh-300px)]">
           {messages.map((message) => (
             <div
               key={message.id}

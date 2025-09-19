@@ -5,6 +5,7 @@ import { ProjectCard } from '@/components/project-card'
 import { TypingAnimation } from '@/components/typing-animation'
 import { StatsCounter } from '@/components/stats-counter'
 import { AIChat } from '@/components/ai-chat-simple'
+import { MobileChatPreview } from '@/components/mobile-chat-preview'
 import { projects, techStack, personalInfo } from '@/lib/data'
 import { Download, ArrowRight, Code, Cloud, Brain, MessageCircle, Heart, Lightbulb, Users, Target, Bot } from 'lucide-react'
 
@@ -90,6 +91,11 @@ export default function HomePage() {
                       Download Resume
                     </a>
                   </Button>
+                </div>
+                
+                {/* Mobile Chat Preview */}
+                <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                  <MobileChatPreview />
                 </div>
               </div>
             </div>
