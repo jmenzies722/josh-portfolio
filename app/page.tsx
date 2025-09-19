@@ -13,120 +13,117 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - App-like Mobile Design */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-800 dark:to-primary-900/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-100/20 via-transparent to-transparent dark:from-primary-900/10"></div>
+      {/* Hero Section - Clean Mobile Design */}
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6">
+        {/* Clean Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-primary-50/20 dark:from-neutral-900 dark:via-neutral-800 dark:to-primary-900/10"></div>
         
-        {/* Floating Elements - Hidden on mobile for cleaner look */}
-        <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-primary-200/20 dark:bg-primary-800/20 rounded-full blur-xl animate-float"></div>
-        <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-accent-200/20 dark:bg-accent-800/20 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+        {/* Subtle floating elements - only on desktop */}
+        <div className="hidden lg:block absolute top-20 left-10 w-20 h-20 bg-primary-200/10 dark:bg-primary-800/10 rounded-full blur-xl animate-float"></div>
+        <div className="hidden lg:block absolute bottom-20 right-10 w-32 h-32 bg-accent-200/10 dark:bg-accent-800/10 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="container-custom relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-              
-              {/* Left Column - Content */}
-              <div className="text-center lg:text-left space-y-4 lg:space-y-8">
-                {/* Greeting */}
-                <div className="animate-fade-in-up">
-                  <p className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400 mb-2 tracking-wide uppercase">
-                    Hello, I'm
-                  </p>
-                </div>
-                
-                {/* Name */}
-                <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-100 leading-tight">
-                    Josh{' '}
-                    <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient">
-                      M
-                    </span>
-                  </h1>
-                </div>
-                
-                {/* Typing Animation */}
-                <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                  <div className="text-sm sm:text-lg lg:text-2xl text-neutral-600 dark:text-neutral-400 mb-4">
-                    <span className="text-neutral-500 dark:text-neutral-500 mr-2">I'm a</span>
-                    <TypingAnimation 
-                      texts={[
-                        'DevOps Engineer',
-                        'Platform Engineering Specialist', 
-                        'AWS Cloud Architect',
-                        'Kubernetes Expert',
-                        'Infrastructure Automation Lead',
-                        'Observability Expert',
-                        'CI/CD Specialist'
-                      ]}
-                      speed={100}
-                      deleteSpeed={50}
-                      pauseTime={2000}
-                      className="font-semibold text-blue-600 dark:text-blue-400"
-                    />
-                  </div>
-                </div>
-                     
-                {/* Description */}
-                <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-                  <p className="text-sm sm:text-base lg:text-lg text-neutral-500 dark:text-neutral-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                    Transforming organizations through scalable infrastructure solutions, 
-                    delivering measurable business impact with modern DevOps practices.
-                  </p>
-                </div>
-                
-                {/* CTA Buttons */}
-                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
-                    <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-4 sm:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base">
-                      <Link href="/chat">
-                        <Bot className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                        Ask Shua
-                        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="lg" asChild className="group border-2 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-300 hover:scale-105 px-4 sm:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base">
-                      <a href="/menzies-resume.pdf" target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-bounce" />
-                        Download Resume
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+        <div className="container-custom relative z-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            
+            {/* Left Column - Content */}
+            <div className="text-center lg:text-left space-y-6 lg:space-y-8">
+              {/* Greeting */}
+              <div className="animate-fade-in-up">
+                <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-3 tracking-wide uppercase">
+                  Hello, I'm
+                </p>
               </div>
               
-              {/* Right Column - Profile Image */}
-              <div className="flex justify-center lg:justify-end animate-fade-in-up mt-6 lg:mt-0" style={{animationDelay: '0.5s'}}>
-                <div className="relative group">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+              {/* Name */}
+              <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-100 leading-tight">
+                  Josh{' '}
+                  <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient">
+                    M
+                  </span>
+                </h1>
+              </div>
+              
+              {/* Typing Animation */}
+              <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                <div className="text-lg sm:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-400 mb-6">
+                  <span className="text-neutral-500 dark:text-neutral-500 mr-2">I'm a</span>
+                  <TypingAnimation 
+                    texts={[
+                      'DevOps Engineer',
+                      'Platform Engineering Specialist', 
+                      'AWS Cloud Architect',
+                      'Kubernetes Expert',
+                      'Infrastructure Automation Lead',
+                      'Observability Expert',
+                      'CI/CD Specialist'
+                    ]}
+                    speed={100}
+                    deleteSpeed={50}
+                    pauseTime={2000}
+                    className="font-semibold text-blue-600 dark:text-blue-400"
+                  />
+                </div>
+              </div>
+                   
+              {/* Description */}
+              <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                <p className="text-base sm:text-lg lg:text-xl text-neutral-500 dark:text-neutral-500 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  Transforming organizations through scalable infrastructure solutions, 
+                  delivering measurable business impact with modern DevOps practices.
+                </p>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                  <Button asChild size="lg" className="group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
+                    <Link href="/chat">
+                      <Bot className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
+                      Ask Shua
+                      <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="lg" asChild className="group border-2 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-300 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-base sm:text-lg font-medium">
+                    <a href="/menzies-resume.pdf" target="_blank" rel="noopener noreferrer">
+                      <Download className="mr-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce" />
+                      Download Resume
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Profile Image */}
+            <div className="flex justify-center lg:justify-end animate-fade-in-up mt-8 lg:mt-0" style={{animationDelay: '0.5s'}}>
+              <div className="relative group">
+                {/* Subtle Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-2xl opacity-15 group-hover:opacity-25 transition-opacity duration-500"></div>
+                
+                {/* Profile Image */}
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+                  <Image
+                    src="/profile-hero.png"
+                    alt="Josh M"
+                    width={600}
+                    height={600}
+                    className="w-full h-full rounded-full border-4 border-white/40 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image"
+                    priority
+                    quality={95}
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 600px"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                  />
                   
-                  {/* Profile Image */}
-                  <div className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-96 lg:h-96">
-                    <Image
-                      src="/profile-hero.png"
-                      alt="Josh M"
-                      width={600}
-                      height={600}
-                      className="w-full h-full rounded-full border-4 border-white/30 dark:border-neutral-600/60 shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-105 object-cover object-center profile-image"
-                      priority
-                      quality={95}
-                      sizes="(max-width: 640px) 160px, (max-width: 768px) 224px, 600px"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                    />
-                    
-                    {/* Floating Tech Icons - Hidden on mobile for cleaner look */}
-                    <div className="hidden sm:flex absolute -top-4 -right-4 w-14 h-14 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float">
-                      <Cloud className="h-7 w-7 text-primary-600" />
-                    </div>
-                    <div className="hidden sm:flex absolute -bottom-4 -left-4 w-14 h-14 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '1s'}}>
-                      <Code className="h-7 w-7 text-accent-600" />
-                    </div>
-                    <div className="hidden sm:flex absolute top-1/2 -left-7 w-12 h-12 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '2s'}}>
-                      <Brain className="h-6 w-6 text-primary-500" />
-                    </div>
+                  {/* Floating Tech Icons - Only on desktop */}
+                  <div className="hidden lg:flex absolute -top-6 -right-6 w-16 h-16 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float">
+                    <Cloud className="h-8 w-8 text-primary-600" />
+                  </div>
+                  <div className="hidden lg:flex absolute -bottom-6 -left-6 w-16 h-16 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+                    <Code className="h-8 w-8 text-accent-600" />
+                  </div>
+                  <div className="hidden lg:flex absolute top-1/2 -left-8 w-14 h-14 bg-white dark:bg-neutral-800 rounded-full shadow-lg items-center justify-center animate-float" style={{animationDelay: '2s'}}>
+                    <Brain className="h-7 w-7 text-primary-500" />
                   </div>
                 </div>
               </div>
