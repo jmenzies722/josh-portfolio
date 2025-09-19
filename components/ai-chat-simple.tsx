@@ -427,7 +427,7 @@ export function AIChat() {
   return (
     <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative">
       {/* Mobile Header */}
-      <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-4 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
+      <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-3 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
@@ -566,11 +566,11 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div ref={messagesContainerRef} className="space-y-6 sm:space-y-6 mb-6 sm:mb-8 flex-1 overflow-y-auto scroll-smooth overscroll-contain desktop-scrollbar min-h-0 px-6 sm:px-8 pb-6">
+        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain desktop-scrollbar min-h-0 px-4 sm:px-6 pb-4">
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`flex gap-4 sm:gap-4 ${message.isUser ? 'justify-end' : 'justify-start'}`}
+              className={`flex gap-2 sm:gap-3 ${message.isUser ? 'justify-end' : 'justify-start'}`}
             >
               {!message.isUser && (
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 flex-shrink-0 aspect-square">
@@ -584,25 +584,25 @@ projects, and professional achievements.`
                 </div>
               )}
               <div
-                className={`max-w-[85%] sm:max-w-md px-4 py-3 rounded-xl shadow-sm ${
+                className={`max-w-[80%] sm:max-w-md px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-sm ${
                   message.isUser
                     ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto rounded-br-md'
                     : 'bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-bl-md'
                 }`}
               >
                 <p className="text-sm sm:text-sm leading-relaxed">{message.text}</p>
-                <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center justify-between mt-1">
                   <div className="flex items-center gap-1 text-xs opacity-70">
-                    <Clock className="h-3 w-3" />
+                    <Clock className="h-2 w-2 sm:h-3 sm:w-3" />
                     <span className="text-xs">{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                   </div>
                   {!message.isUser && (
                     <div className="flex items-center gap-1">
-                      <button className="p-1.5 hover:bg-white/20 rounded-full transition-colors">
-                        <ThumbsUp className="h-3 w-3" />
+                      <button className="p-1 hover:bg-white/20 rounded-full transition-colors">
+                        <ThumbsUp className="h-2 w-2 sm:h-3 sm:w-3" />
                       </button>
-                      <button className="p-1.5 hover:bg-white/20 rounded-full transition-colors">
-                        <ThumbsDown className="h-3 w-3" />
+                      <button className="p-1 hover:bg-white/20 rounded-full transition-colors">
+                        <ThumbsDown className="h-2 w-2 sm:h-3 sm:w-3" />
                       </button>
                     </div>
                   )}
@@ -689,10 +689,10 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div className="space-y-6 sm:space-y-6 flex-shrink-0 px-6 sm:px-8">
+        <div className="space-y-3 sm:space-y-4 flex-shrink-0 px-4 sm:px-6">
           {/* Suggestions - Enhanced Mobile Design */}
           {messages.length <= 1 && (
-            <div className="flex flex-wrap gap-3 sm:gap-3 justify-center">
+            <div className="flex flex-wrap gap-2 sm:gap-2 justify-center">
             {['Technical Expertise', 'Career Impact', 'Platform Engineering', 'Professional Journey'].map((suggestion) => (
               <button
                 key={suggestion}
@@ -700,7 +700,7 @@ projects, and professional achievements.`
                   setInput(suggestion)
                   if (messages.length > 3) setShowContactPrompt(true)
                 }}
-                  className="px-3 py-2 text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-200 font-medium"
+                  className="px-2 py-1 text-xs sm:text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-200 font-medium"
               >
                 {suggestion}
               </button>
@@ -714,7 +714,7 @@ projects, and professional achievements.`
             <Button
               onClick={() => setInput("Tell me about Josh's platform engineering experience")}
               variant="outline"
-                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-base font-medium rounded-lg shadow-sm hover:shadow-md"
+                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-sm sm:text-base font-medium rounded-lg shadow-sm hover:shadow-md"
             >
                 <Bot className="h-5 w-5 mr-2" />
               Ask Shua About Josh
@@ -723,7 +723,7 @@ projects, and professional achievements.`
           )}
           
           {/* Input Area - Enhanced Mobile Design */}
-          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-3 sm:gap-3 bg-white dark:bg-neutral-800 p-4 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none">
+          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none">
               <input
                 type="text"
                 value={input}
@@ -736,7 +736,7 @@ projects, and professional achievements.`
                       ? "Shua is typing..." 
                       : "Ask Shua about Josh's expertise..."
                 }
-                className={`flex-1 px-4 py-3 border rounded-lg backdrop-blur-sm text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
+                className={`flex-1 px-3 py-2 sm:px-4 sm:py-3 border rounded-lg backdrop-blur-sm text-sm sm:text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
                   isChatStopped 
                     ? 'border-orange-200 dark:border-orange-700 bg-orange-50/80 dark:bg-orange-900/20 focus:ring-orange-500 focus:border-orange-500' 
                     : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 focus:ring-primary-500 focus:border-primary-500'
@@ -746,7 +746,7 @@ projects, and professional achievements.`
             <Button 
               onClick={handleSend} 
               disabled={isLoading || isTyping || !input.trim() || isChatStopped}
-              className={`px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
+              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
                 isChatStopped 
                   ? 'bg-orange-500 hover:bg-orange-600 text-white' 
                   : 'bg-gradient-to-br from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white'
