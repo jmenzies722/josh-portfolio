@@ -5,27 +5,36 @@ import { MessageCircle, Sparkles, Users, Zap } from 'lucide-react'
 
 export default function ChatPage() {
   return (
-    <div className="min-h-screen py-8 sm:py-16 section-bg">
-      <div className="container-custom px-4 sm:px-6">
-        {/* Hero Section */}
-        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-          <div className="mb-6 sm:mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary-600 to-accent-600 text-white mb-4 sm:mb-6 animate-pulse-slow">
-              <MessageCircle className="h-8 w-8 sm:h-10 sm:w-10" />
+    <div className="min-h-screen flex flex-col">
+      {/* Mobile Full-Screen Chat */}
+      <div className="flex-1 flex flex-col sm:hidden">
+        <AIChat />
+      </div>
+      
+      {/* Desktop Layout */}
+      <div className="hidden sm:block py-16 section-bg">
+        <div className="container-custom px-6">
+          {/* Hero Section */}
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="mb-8 animate-fade-in-up">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary-600 to-accent-600 text-white mb-6 animate-pulse-slow">
+                <MessageCircle className="h-10 w-10" />
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                Chat with <span className="gradient-text">Shua</span>
+              </h1>
+              <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                Josh's AI assistant that knows everything about his tech experience and some of his life!
+              </p>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 sm:mb-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              Chat with <span className="gradient-text">Shua</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 mb-6 sm:mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              Josh's AI assistant that knows everything about his tech experience and some of his life!
-            </p>
+          </div>
+
+          {/* Chat Interface */}
+          <div className="max-w-4xl mx-auto animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+            <AIChat />
           </div>
         </div>
-
-        {/* Chat Interface */}
-        <div className="max-w-4xl mx-auto animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-          <AIChat />
-        </div>
+      </div>
 
         {/* Features Section */}
         <div className="max-w-4xl mx-auto mt-12 sm:mt-16">
