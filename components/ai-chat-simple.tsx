@@ -425,80 +425,83 @@ export function AIChat() {
   }
 
   return (
-    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative">
+    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative overflow-hidden">
       {/* Mobile Header */}
-      <CardHeader className="sm:hidden bg-white dark:bg-neutral-800 rounded-none p-5 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
+      <CardHeader className="sm:hidden bg-gradient-to-r from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-none p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
         <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg border-2 border-primary-200 dark:border-primary-700 ring-2 ring-primary-100 dark:ring-primary-800">
               <Image
                 src="/profile-screenshot.png"
                 alt="Josh M"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Shua</h2>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400">Josh's AI Assistant</p>
+              <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">Shua</h2>
+              <p className="text-sm text-primary-600 dark:text-primary-400 font-medium">Josh's AI Assistant</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <Button
               onClick={toggleChat}
               variant="ghost"
               size="sm"
-              className={`transition-colors duration-200 p-2 ${
+              className={`transition-all duration-200 p-3 rounded-xl shadow-sm hover:shadow-md ${
                 isChatStopped 
                   ? 'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 hover:bg-green-50 dark:hover:bg-green-900/20' 
                   : 'text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 hover:bg-orange-50 dark:hover:bg-orange-900/20'
               }`}
               title={isChatStopped ? "Resume chat" : "Stop chat"}
             >
-              {isChatStopped ? <Play className="h-4 w-4" /> : <Square className="h-4 w-4" />}
+              {isChatStopped ? <Play className="h-5 w-5" /> : <Square className="h-5 w-5" />}
             </Button>
             <Button
               onClick={clearChat}
               variant="ghost"
               size="sm"
-              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200 p-2"
+              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200 p-3 rounded-xl shadow-sm hover:shadow-md"
               title="Clear chat"
             >
-              <Trash2 className="h-4 w-4" />
+              <Trash2 className="h-5 w-5" />
             </Button>
           </div>
         </CardTitle>
       </CardHeader>
       
       {/* Desktop Header */}
-      <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-none p-6 sm:p-8 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
+      <CardHeader className="hidden sm:block bg-gradient-to-r from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-none p-8 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700 shadow-sm">
         <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md border-2 border-primary-200 dark:border-primary-700 animate-pulse-slow aspect-square">
+          <div className="flex items-center gap-4 text-xl">
+            <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg border-2 border-primary-200 dark:border-primary-700 ring-2 ring-primary-100 dark:ring-primary-800 animate-pulse-slow aspect-square">
               <Image
                 src="/profile-screenshot.png"
                 alt="Josh M"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 className="w-full h-full object-cover aspect-square"
               />
             </div>
-            <span className="gradient-text font-bold text-sm sm:text-base lg:text-lg">Shua - Josh's AI Assistant</span>
+            <div>
+              <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Shua</h2>
+              <p className="text-base text-primary-600 dark:text-primary-400 font-medium">Josh's AI Assistant</p>
+            </div>
           </div>
-          <div className="flex gap-1 sm:gap-2">
+          <div className="flex gap-3">
             <Button
               onClick={toggleChat}
               variant="ghost"
               size="sm"
-              className={`transition-colors duration-200 p-2 sm:p-2 ${
+              className={`transition-all duration-200 p-3 rounded-xl shadow-sm hover:shadow-md ${
                 isChatStopped 
                   ? 'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 hover:bg-green-50 dark:hover:bg-green-900/20' 
                   : 'text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 hover:bg-orange-50 dark:hover:bg-orange-900/20'
               }`}
               title={isChatStopped ? "Resume chat" : "Stop chat"}
             >
-              {isChatStopped ? <Play className="h-3 w-3 sm:h-4 sm:w-4" /> : <Square className="h-3 w-3 sm:h-4 sm:w-4" />}
+              {isChatStopped ? <Play className="h-5 w-5" /> : <Square className="h-5 w-5" />}
             </Button>
             <Button
               onClick={() => {
@@ -535,19 +538,19 @@ projects, and professional achievements.`
               }}
               variant="ghost"
               size="sm"
-              className="text-neutral-500 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200 p-2 sm:p-2"
+              className="text-neutral-500 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200 p-3 rounded-xl shadow-sm hover:shadow-md"
               title="Download conversation with Josh's info"
             >
-              <Download className="h-3 w-3 sm:h-4 sm:w-4" />
+              <Download className="h-5 w-5" />
             </Button>
             <Button
               onClick={clearChat}
               variant="ghost"
               size="sm"
-              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200 p-2 sm:p-2"
+              className="text-neutral-500 hover:text-red-600 dark:text-neutral-400 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200 p-3 rounded-xl shadow-sm hover:shadow-md"
               title="Clear chat"
             >
-              <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
+              <Trash2 className="h-5 w-5" />
             </Button>
           </div>
         </CardTitle>
@@ -584,10 +587,10 @@ projects, and professional achievements.`
                 </div>
               )}
               <div
-                className={`max-w-[85%] sm:max-w-md px-5 py-4 rounded-2xl shadow-sm ${
+                className={`max-w-[85%] sm:max-w-md px-6 py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ${
                   message.isUser
-                    ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto rounded-br-md'
-                    : 'bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-bl-md'
+                    ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ml-auto rounded-br-md border border-primary-500/20'
+                    : 'bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-bl-md border border-neutral-200 dark:border-neutral-600'
                 }`}
               >
                 <p className="text-sm sm:text-sm leading-relaxed">{message.text}</p>
@@ -700,7 +703,7 @@ projects, and professional achievements.`
                   setInput(suggestion)
                   if (messages.length > 3) setShowContactPrompt(true)
                 }}
-                  className="px-4 py-3 text-sm bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                  className="px-5 py-3 text-sm bg-gradient-to-r from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 text-primary-700 dark:text-primary-300 rounded-full hover:from-primary-200 hover:to-primary-300 dark:hover:from-primary-800 dark:hover:to-primary-700 transition-all duration-200 font-medium shadow-md hover:shadow-lg border border-primary-200 dark:border-primary-700"
               >
                 {suggestion}
               </button>
@@ -714,7 +717,7 @@ projects, and professional achievements.`
             <Button
               onClick={() => setInput("Tell me about Josh's platform engineering experience")}
               variant="outline"
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-base font-medium rounded-xl shadow-sm hover:shadow-md"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border-2 border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:from-primary-100 hover:to-accent-100 dark:hover:from-primary-800/30 dark:hover:to-accent-800/30 transition-all duration-200 text-base font-medium rounded-xl shadow-lg hover:shadow-xl hover:scale-105"
             >
                 <Bot className="h-5 w-5 mr-2" />
               Ask Shua About Josh
@@ -723,7 +726,7 @@ projects, and professional achievements.`
           )}
           
           {/* Input Area - Enhanced Mobile Design */}
-          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-4 sm:gap-4 bg-white dark:bg-neutral-800 p-5 sm:p-6 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-lg sm:shadow-none">
+          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-4 sm:gap-4 bg-gradient-to-r from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 p-6 sm:p-8 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10 shadow-xl sm:shadow-lg">
               <input
                 type="text"
                 value={input}
@@ -736,7 +739,7 @@ projects, and professional achievements.`
                       ? "Shua is typing..." 
                       : "Ask Shua about Josh's expertise..."
                 }
-                className={`flex-1 px-5 py-4 border rounded-xl backdrop-blur-sm text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 ${
+                className={`flex-1 px-6 py-5 border-2 rounded-xl backdrop-blur-sm text-base text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 transition-all duration-200 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 shadow-md hover:shadow-lg ${
                   isChatStopped 
                     ? 'border-orange-200 dark:border-orange-700 bg-orange-50/80 dark:bg-orange-900/20 focus:ring-orange-500 focus:border-orange-500' 
                     : 'border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 focus:ring-primary-500 focus:border-primary-500'
@@ -746,10 +749,10 @@ projects, and professional achievements.`
             <Button 
               onClick={handleSend} 
               disabled={isLoading || isTyping || !input.trim() || isChatStopped}
-              className={`px-5 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
+              className={`px-6 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${
                 isChatStopped 
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white' 
-                  : 'bg-gradient-to-br from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white'
+                  ? 'bg-orange-500 hover:bg-orange-600 text-white border-2 border-orange-400' 
+                  : 'bg-gradient-to-br from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white border-2 border-primary-500'
               }`}
             >
               <Send className="h-5 w-5" />
