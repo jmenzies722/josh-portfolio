@@ -7,7 +7,7 @@ export default function ChatPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Mobile Full-Screen Chat - ChatGPT Style */}
-      <div className="flex-1 flex flex-col sm:hidden h-screen overflow-hidden">
+      <div className="flex-1 flex flex-col sm:hidden h-screen overflow-hidden relative">
         <AIChat />
       </div>
       

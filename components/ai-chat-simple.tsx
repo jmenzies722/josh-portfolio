@@ -112,8 +112,20 @@ export function AIChat() {
       }, 150)
     }
 
+    // Handle visual viewport changes (mobile keyboard)
+    const handleVisualViewportChange = () => {
+      setTimeout(() => {
+        scrollToBottom()
+      }, 100)
+    }
+
     window.addEventListener('resize', handleResize)
     window.addEventListener('orientationchange', handleViewportChange)
+    
+    // Add visual viewport listener for mobile keyboard
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleVisualViewportChange)
+    }
     
     const inputElement = document.querySelector('input[placeholder*="Ask about Josh"]') as HTMLInputElement
     if (inputElement) {
@@ -122,6 +134,9 @@ export function AIChat() {
       return () => {
         window.removeEventListener('resize', handleResize)
         window.removeEventListener('orientationchange', handleViewportChange)
+        if (window.visualViewport) {
+          window.visualViewport.removeEventListener('resize', handleVisualViewportChange)
+        }
         inputElement.removeEventListener('focus', handleFocus)
         inputElement.removeEventListener('blur', handleBlur)
       }
@@ -130,6 +145,9 @@ export function AIChat() {
     return () => {
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('orientationchange', handleViewportChange)
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleVisualViewportChange)
+      }
     }
   }, [])
 
@@ -400,7 +418,7 @@ export function AIChat() {
   }
 
   return (
-    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none">
+    <Card className="h-screen sm:h-full sm:max-w-4xl sm:mx-auto bg-white dark:bg-neutral-800 border-0 sm:border-0 shadow-none transition-all duration-300 mx-0 sm:mx-auto flex flex-col rounded-none relative">
       <CardHeader className="hidden sm:block bg-white dark:bg-neutral-800 rounded-none p-4 sm:p-6 flex-shrink-0 border-b border-neutral-200 dark:border-neutral-700">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl">
@@ -481,7 +499,7 @@ projects, and professional achievements.`
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0">
+      <CardContent className="p-0 relative flex-1 flex flex-col min-h-0 pb-20 sm:pb-0">
         {/* Scroll to bottom indicator */}
         {showScrollIndicator && (
           <div className="absolute top-2 right-2 z-10">
@@ -495,7 +513,7 @@ projects, and professional achievements.`
           </div>
         )}
         
-        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin min-h-0 px-4 sm:px-6">
+        <div ref={messagesContainerRef} className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-1 overflow-y-auto scroll-smooth overscroll-contain scrollbar-thin min-h-0 px-4 sm:px-6 pb-4">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -651,8 +669,8 @@ projects, and professional achievements.`
             </div>
           )}
           
-          {/* Input Area - ChatGPT Style */}
-          <div className="flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 sticky bottom-0 z-10">
+          {/* Input Area - Fixed at bottom for mobile */}
+          <div className="fixed bottom-0 left-0 right-0 sm:relative sm:bottom-auto sm:left-auto sm:right-auto flex gap-2 sm:gap-3 bg-white dark:bg-neutral-800 p-3 sm:p-4 rounded-none sm:rounded-lg border-t border-neutral-200 dark:border-neutral-700 z-50 sm:z-10">
               <input
                 type="text"
                 value={input}
