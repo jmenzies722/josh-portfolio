@@ -17,11 +17,13 @@
     "format:check": "prettier --check .",
     "optimize:images": "node scripts/optimize-images.js",
     "prebuild": "npm run optimize:images",
+    "predeploy": "npm run typecheck && npm run lint && npm run test",
     "lighthouse": "lhci autorun",
     "lighthouse:ci": "lhci autorun --upload.target=temporary-public-storage",
     "deploy:preview": "vercel --target preview",
     "deploy:production": "vercel --prod",
-    "postinstall": "npm run optimize:images"
+    "postinstall": "npm run optimize:images",
+    "ci": "npm ci && npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",

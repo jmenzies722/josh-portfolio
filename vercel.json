@@ -2,7 +2,7 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm ci",
   "outputDirectory": ".next",
   "functions": {
     "app/api/**/*.ts": {
@@ -38,5 +38,8 @@
       "destination": "/menzies-resume.pdf",
       "permanent": true
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
