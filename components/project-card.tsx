@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-import { Tag } from './ui/tag'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Tag } from '@/components/ui/tag'
 import { ExternalLink, Github, ArrowRight } from 'lucide-react'
 
 interface ProjectCardProps {
