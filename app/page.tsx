@@ -150,8 +150,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile Chat Link Section */}
-      <section className="md:hidden py-8 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
+        {/* Mobile Chat Link Section - Deploy to josh-portfolio-i67c */}
+        <section className="md:hidden py-8 relative overflow-hidden bg-gradient-to-br from-primary-50/30 via-accent-50/20 to-primary-50/30 dark:from-primary-900/10 dark:via-accent-900/5 dark:to-primary-900/10">
         <div className="container-custom relative">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6 animate-fade-in-up">
