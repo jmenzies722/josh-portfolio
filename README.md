@@ -200,7 +200,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Josh M** - Strategic Platform Engineer
 - **Email**: jmenzies722@gmail.com
-- **LinkedIn**: [linkedin.com/in/joshmenzies](https://linkedin.com/in/joshmenzies)
+- **LinkedIn**: [linkedin.com/in/josh-m123456](https://www.linkedin.com/in/josh-m123456/)
 - **Portfolio**: [joshmenzies.dev](https://joshmenzies.dev)
 
 ---

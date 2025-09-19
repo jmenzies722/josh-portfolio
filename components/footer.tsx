@@ -22,7 +22,7 @@ export function Footer() {
                 <Github className="h-3.5 w-3.5 text-gray-400 hover:text-white transition-colors duration-200" />
               </a>
               <a
-                href="https://linkedin.com/in/josh-menzies"
+                href="https://www.linkedin.com/in/josh-m123456/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 bg-neutral-800 hover:bg-blue-600 rounded-md transition-colors duration-200"

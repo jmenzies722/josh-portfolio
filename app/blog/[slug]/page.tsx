@@ -582,7 +582,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Strategic Platform Engineer passionate about building scalable cloud infrastructure 
                       and intelligent systems. Follow me on{' '}
-                      <a href="https://linkedin.com/in/joshmenzies" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                      <a href="https://www.linkedin.com/in/josh-m123456/" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                         LinkedIn
                       </a>{' '}
                       and{' '}

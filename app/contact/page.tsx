@@ -136,12 +136,12 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium text-neutral-900 dark:text-neutral-100">LinkedIn</h3>
                       <a
-                        href="https://linkedin.com/in/josh-menzies"
+                        href="https://www.linkedin.com/in/josh-m123456/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-neutral-600 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400 transition-colors duration-200"
                       >
-                        linkedin.com/in/josh-menzies
+                        linkedin.com/in/josh-m123456
                       </a>
                     </div>
                   </div>
